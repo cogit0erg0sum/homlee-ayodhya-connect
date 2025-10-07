@@ -7,18 +7,24 @@ interface RoomCardProps {
   features: string[];
   maxOccupancy: number;
   priceFrom: string;
+  image: string;
 }
 
-const RoomCard = ({ name, features, maxOccupancy, priceFrom }: RoomCardProps) => {
+const RoomCard = ({ name, features, maxOccupancy, priceFrom, image }: RoomCardProps) => {
   const whatsappLink = `https://wa.me/918004174182?text=${encodeURIComponent(
     `Hi! I'd like to book the ${name} on [dates].`
   )}`;
 
   return (
     <Card className="overflow-hidden hover:shadow-large transition-shadow">
-      {/* Image Placeholder */}
-      <div className="aspect-video bg-muted flex items-center justify-center text-muted-foreground text-sm">
-        [{name} photos - to be uploaded]
+      {/* Room Image */}
+      <div className="aspect-video overflow-hidden">
+        <img 
+          src={image} 
+          alt={`${name} - Homlee Ayodhya`}
+          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          loading="lazy"
+        />
       </div>
 
       <CardHeader>

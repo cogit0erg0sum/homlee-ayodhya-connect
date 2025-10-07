@@ -1,5 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
+import heroImage from "@/assets/room-1.jpg";
 
 const Hero = () => {
   const whatsappLink = `https://wa.me/918004174182?text=${encodeURIComponent(
@@ -49,11 +50,14 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Hero Image Placeholder */}
-        <div className="mt-12 rounded-2xl overflow-hidden shadow-large bg-muted aspect-video max-w-3xl mx-auto">
-          <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-            [Hero Image: Ayodhya property exterior or Ram Janmabhoomi view]
-          </div>
+        {/* Hero Image */}
+        <div className="mt-12 rounded-2xl overflow-hidden shadow-large max-w-3xl mx-auto">
+          <img 
+            src={heroImage} 
+            alt="Homlee Ayodhya - Comfortable room interior with modern amenities in Ayodhya"
+            className="w-full h-full object-cover aspect-video"
+            loading="eager"
+          />
         </div>
       </div>
     </section>

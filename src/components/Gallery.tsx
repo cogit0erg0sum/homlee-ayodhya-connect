@@ -1,15 +1,15 @@
 import { useState } from "react";
 import { X } from "lucide-react";
+import room1 from "@/assets/room-1.jpg";
+import room2 from "@/assets/room-2.jpg";
+import room3 from "@/assets/room-3.jpg";
+import room4 from "@/assets/room-4.jpg";
 
-const galleryPlaceholders = [
-  "Deluxe Double room interior",
-  "Family Room with extra bed",
-  "Property exterior view",
-  "Reception area",
-  "Common corridor",
-  "Nearby Ram Janmabhoomi",
-  "Saryu Ghat view",
-  "Hanuman Garhi temple",
+const galleryImages = [
+  { src: room1, alt: "Deluxe Double room interior - Homlee Ayodhya" },
+  { src: room2, alt: "Family Room with wardrobe - Homlee Ayodhya" },
+  { src: room3, alt: "Comfortable room with modern lighting - Homlee Ayodhya" },
+  { src: room4, alt: "Standard room interior - Homlee Ayodhya" },
 ];
 
 const Gallery = () => {
@@ -26,15 +26,18 @@ const Gallery = () => {
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {galleryPlaceholders.map((alt, index) => (
+          {galleryImages.map((image, index) => (
             <button
               key={index}
               onClick={() => setSelectedImage(index)}
-              className="aspect-square bg-muted rounded-lg overflow-hidden hover:scale-105 transition-transform shadow-soft hover:shadow-medium"
+              className="aspect-square rounded-lg overflow-hidden hover:scale-105 transition-transform shadow-soft hover:shadow-medium"
             >
-              <div className="w-full h-full flex items-center justify-center text-xs text-center p-2 text-muted-foreground">
-                [{alt}]
-              </div>
+              <img 
+                src={image.src} 
+                alt={image.alt}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
             </button>
           ))}
         </div>
@@ -52,14 +55,18 @@ const Gallery = () => {
             >
               <X size={32} />
             </button>
-            <div className="max-w-4xl w-full aspect-video bg-muted rounded-lg flex items-center justify-center text-white">
-              [{galleryPlaceholders[selectedImage]}]
+            <div className="max-w-4xl w-full">
+              <img 
+                src={galleryImages[selectedImage].src}
+                alt={galleryImages[selectedImage].alt}
+                className="w-full h-auto rounded-lg"
+              />
             </div>
           </div>
         )}
 
         <p className="text-center text-sm text-muted-foreground mt-8">
-          Photos to be uploaded - rooms, property exterior, and nearby temples
+          💡 <strong>Need more photos?</strong> You can easily add property exterior, reception, and nearby temple photos
         </p>
       </div>
     </section>
