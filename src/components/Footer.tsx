@@ -1,16 +1,20 @@
 import { MessageCircle } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
 
   const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    element?.scrollIntoView({ behavior: "smooth" });
+    if (location.pathname !== "/") {
+      window.location.href = "/" + href;
+    } else {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
-  const whatsappLink = `https://wa.me/918004174182?text=${encodeURIComponent(
-    "Hi Homlee Ayodhya! I'm interested in booking. Please contact me."
-  )}`;
+  const whatsappLink = "https://wa.me/918004174182?text=Hi!%20I%20want%20to%20book%20Homlee%20Ayodhya";
 
   return (
     <footer className="bg-foreground text-background py-12 px-4">
@@ -21,29 +25,38 @@ const Footer = () => {
             <p className="text-sm opacity-80">
               Peaceful stays near Ram Janmabhoomi
             </p>
+            <p className="text-sm opacity-80 mt-2">
+              Ayodhya, Uttar Pradesh
+            </p>
           </div>
 
           <div>
             <h4 className="font-semibold mb-4">Quick Links</h4>
             <div className="space-y-2 text-sm">
+              <Link
+                to="/"
+                className="block opacity-80 hover:opacity-100 transition-opacity"
+              >
+                Home
+              </Link>
               <button
                 onClick={() => scrollToSection("#rooms")}
-                className="block opacity-80 hover:opacity-100 transition-opacity"
+                className="block opacity-80 hover:opacity-100 transition-opacity text-left"
               >
                 Rooms
               </button>
               <button
                 onClick={() => scrollToSection("#itinerary")}
-                className="block opacity-80 hover:opacity-100 transition-opacity"
+                className="block opacity-80 hover:opacity-100 transition-opacity text-left"
               >
                 Itinerary Planner
               </button>
-              <button
-                onClick={() => scrollToSection("#location")}
+              <Link
+                to="/blog"
                 className="block opacity-80 hover:opacity-100 transition-opacity"
               >
-                Location
-              </button>
+                Blog
+              </Link>
               <a
                 href={whatsappLink}
                 target="_blank"
@@ -59,9 +72,20 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm opacity-80">
-              <p>+91 8004174182</p>
-              <p>info@homleeayodhya.com</p>
-              <p>Ayodhya, Uttar Pradesh</p>
+              <a href="tel:+918004174182" className="block hover:opacity-100 transition-opacity">
+                +91 8004174182
+              </a>
+              <a href="mailto:info@homleeayodhya.com" className="block hover:opacity-100 transition-opacity">
+                info@homleeayodhya.com
+              </a>
+              <a 
+                href="https://www.homleeayodhya.info" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block hover:opacity-100 transition-opacity"
+              >
+                www.homleeayodhya.info
+              </a>
             </div>
           </div>
         </div>
