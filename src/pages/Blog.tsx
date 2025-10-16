@@ -120,7 +120,7 @@ const Blog = () => {
                 <Button asChild size="lg" className="bg-hero-gradient my-4 text-white">
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 h-5 w-5 text-white" />
-                    Chat on WhatsApp to check availability
+                    Check Availability
                   </a>
                 </Button>
 
@@ -167,7 +167,7 @@ const Blog = () => {
                 <Button asChild variant="outline" size="lg" className="my-4 border-primary text-primary hover:bg-primary hover:text-white">
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 h-5 w-5" />
-                    Chat for current offers and discounts
+                    View Offers
                   </a>
                 </Button>
 
@@ -193,7 +193,7 @@ const Blog = () => {
                   <Button asChild size="lg" className="bg-hero-gradient text-white">
                     <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                       <MessageCircle className="mr-2 h-5 w-5 text-white" />
-                      Chat on WhatsApp — No commission, no hidden charges
+                      Book on WhatsApp
                     </a>
                   </Button>
                   <p className="text-sm text-muted-foreground">Homlee Ayodhya — Where comfort meets devotion.</p>
