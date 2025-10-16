@@ -4,6 +4,7 @@ import { MessageCircle, ArrowLeft, Calendar, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ramJanmabhoomiImage from "@/assets/ram-janmabhoomi-blog.jpg";
 
 const Blog = () => {
   const whatsappLink = "https://wa.me/918004174182?text=Hi!%20I%20want%20to%20book%20Homlee%20Ayodhya";
@@ -94,11 +95,12 @@ const Blog = () => {
                 </div>
 
                 {/* Featured Image */}
-                <div className="w-full h-[400px] bg-gradient-to-br from-secondary via-background to-muted rounded-xl shadow-large flex items-center justify-center">
-                  <div className="text-center space-y-2">
-                    <p className="text-6xl">🕉️</p>
-                    <p className="text-muted-foreground">Ram Janmabhoomi, Ayodhya</p>
-                  </div>
+                <div className="w-full h-[400px] rounded-xl overflow-hidden shadow-large">
+                  <img 
+                    src={ramJanmabhoomiImage} 
+                    alt="Ram Janmabhoomi Temple at night, beautifully illuminated - Ayodhya" 
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </header>
 
