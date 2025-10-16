@@ -10,7 +10,10 @@ const Header = () => {
   const navItems = [
     { label: "Home", href: "/", type: "route" },
     { label: "Rooms", href: "/#rooms", type: "anchor" },
+    { label: "Amenities", href: "/#amenities", type: "anchor" },
+    { label: "Gallery", href: "/#gallery", type: "anchor" },
     { label: "Itinerary", href: "/#itinerary", type: "anchor" },
+    { label: "Location", href: "/#location", type: "anchor" },
     { label: "Contact", href: "/#contact", type: "anchor" },
     { label: "Blog", href: "/blog", type: "route" },
   ];
