@@ -18,15 +18,17 @@ const Header = () => {
     { label: "Blog", href: "/blog", type: "route" },
   ];
 
-  const handleNavigation = (item: typeof navItems[0]) => {
+  const handleNavigation = (item: typeof navItems[0], e?: React.MouseEvent) => {
     setMobileMenuOpen(false);
     
     if (item.type === "anchor") {
-      // If we're on the blog page, navigate to home first
-      if (location.pathname === "/blog") {
-        window.location.href = item.href;
+      if (location.pathname !== "/") {
+        // If we're not on home page, use Link to navigate
+        // The href will handle the navigation
+        return;
       } else {
         // We're on home page, just scroll
+        e?.preventDefault();
         const id = item.href.split("#")[1];
         const element = document.getElementById(id);
         element?.scrollIntoView({ behavior: "smooth" });
@@ -67,35 +69,16 @@ const Header = () => {
                   {item.label}
                 </Link>
               ) : (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
-                  onClick={(e) => {
-                    if (location.pathname === "/") {
-                      e.preventDefault();
-                      handleNavigation(item);
-                    }
-                  }}
+                  to={item.href}
+                  onClick={(e) => handleNavigation(item, e)}
                   className="text-sm font-medium text-foreground hover:text-primary transition-colors"
                 >
                   {item.label}
-                </a>
+                </Link>
               )
             ))}
-            <Button
-              asChild
-              size="sm"
-              className="bg-hero-gradient"
-            >
-              <a href="/#rooms" onClick={(e) => {
-                if (location.pathname === "/") {
-                  e.preventDefault();
-                  document.getElementById("rooms")?.scrollIntoView({ behavior: "smooth" });
-                }
-              }}>
-                View Rooms
-              </a>
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -126,21 +109,14 @@ const Header = () => {
                   {item.label}
                 </Link>
               ) : (
-                <a
+                <Link
                   key={item.href}
-                  href={item.href}
-                  onClick={(e) => {
-                    if (location.pathname === "/") {
-                      e.preventDefault();
-                      handleNavigation(item);
-                    } else {
-                      setMobileMenuOpen(false);
-                    }
-                  }}
+                  to={item.href}
+                  onClick={(e) => handleNavigation(item, e)}
                   className="block w-full text-left py-3 text-sm font-medium text-foreground hover:text-primary transition-colors"
                 >
                   {item.label}
-                </a>
+                </Link>
               )
             ))}
           </nav>
