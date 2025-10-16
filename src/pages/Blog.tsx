@@ -117,9 +117,9 @@ const Blog = () => {
                 <p className="bg-primary/10 p-4 rounded-lg border-l-4 border-primary">
                   ✨ <strong>Special tip:</strong> Guests can request help planning a one- or two-day itinerary covering major temples, ghats, and local food spots.
                 </p>
-                <Button asChild size="lg" className="bg-hero-gradient my-4">
+                <Button asChild size="lg" className="bg-hero-gradient my-4 text-white">
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-5 w-5" />
+                    <MessageCircle className="mr-2 h-5 w-5 text-white" />
                     Chat on WhatsApp to check availability
                   </a>
                 </Button>
@@ -164,7 +164,7 @@ const Blog = () => {
                 <p>
                   Most cheap hotels near Ram Mandir range between <strong>₹800–₹2,000 per night</strong> depending on season and amenities. Homlee Ayodhya offers modern comfort within this range — making it one of the best value stays in Ayodhya.
                 </p>
-                <Button asChild variant="outline" size="lg" className="my-4">
+                <Button asChild variant="outline" size="lg" className="my-4 border-primary text-primary hover:bg-primary hover:text-white">
                   <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
                     <MessageCircle className="mr-2 h-5 w-5" />
                     Chat for current offers and discounts
@@ -190,9 +190,9 @@ const Blog = () => {
                 </p>
                 <div className="bg-card p-6 rounded-xl shadow-large my-8 text-center space-y-4">
                   <p className="text-lg font-medium">📞 Ready to book your stay?</p>
-                  <Button asChild size="lg" className="bg-hero-gradient">
+                  <Button asChild size="lg" className="bg-hero-gradient text-white">
                     <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="mr-2 h-5 w-5" />
+                      <MessageCircle className="mr-2 h-5 w-5 text-white" />
                       Chat on WhatsApp — No commission, no hidden charges
                     </a>
                   </Button>

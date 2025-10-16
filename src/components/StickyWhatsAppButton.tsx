@@ -14,7 +14,7 @@ const StickyWhatsAppButton = ({ phoneNumber, message }: StickyWhatsAppButtonProp
       <Button
         asChild
         size="lg"
-        className="h-14 w-14 rounded-full bg-hero-gradient shadow-large hover:scale-110 transition-all"
+        className="h-14 w-14 rounded-full bg-hero-gradient shadow-large hover:scale-110 transition-all text-white"
       >
         <a
           href={whatsappLink}
@@ -22,7 +22,7 @@ const StickyWhatsAppButton = ({ phoneNumber, message }: StickyWhatsAppButtonProp
           rel="noopener noreferrer"
           aria-label="Chat on WhatsApp"
         >
-          <MessageCircle className="h-6 w-6" />
+          <MessageCircle className="h-6 w-6 text-white" />
         </a>
       </Button>
     </div>
