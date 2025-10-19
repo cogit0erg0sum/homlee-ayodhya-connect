@@ -56,13 +56,8 @@ export default function WhatsAppDateDialog({
     return d;
   }, []);
 
-  // responsive months to show (1 on mobile, 2 on larger screens)
-  React.useEffect(() => {
-    const update = () => setMonthsToShow(window.innerWidth < 640 ? 1 : 2);
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, []);
+  // always show a single month for simpler mobile-first UX
+  React.useEffect(() => setMonthsToShow(1), []);
 
   // when dialog opens or checkIn changes, align displayed month to checkIn or today
   React.useEffect(() => {
@@ -125,7 +120,6 @@ export default function WhatsAppDateDialog({
       <DialogContent className="max-w-[720px]">
         <DialogHeader>
           <DialogTitle>Select your stay</DialogTitle>
-          <DialogDescription>Choose check-in and check-out dates. Past dates are disabled.</DialogDescription>
         </DialogHeader>
 
         {/* small progress bar */}
@@ -139,13 +133,14 @@ export default function WhatsAppDateDialog({
           </div>
         </div>
 
-        <div className="grid gap-3">
+  <div className="grid gap-3 pb-28 md:pb-0">
+          {/* Use the same DayPicker on mobile and desktop for consistency */}
           <noscript>
             <div className="p-4 bg-yellow-50 rounded border">JavaScript is required to use the interactive date picker. Please call us at <a href={`tel:+${PHONE_NUMBER}`} className="underline">+{PHONE_NUMBER}</a> to book.</div>
           </noscript>
 
           {/* Mobile sticky nav: Next/Back (sticky at bottom on small screens) */}
-          <div className="md:hidden fixed left-0 right-0 bottom-4 px-4 pointer-events-none">
+          <div className="md:hidden fixed left-0 right-0 bottom-6 safe-bottom px-4 pointer-events-none">
             <div className="mx-auto max-w-3xl flex gap-3 justify-end pointer-events-auto">
               {step !== 'checkin' && (
                 <Button variant="outline" className="px-6 py-3" onClick={() => setStep((s) => (s === 'checkout' ? 'checkin' : 'checkout'))}>Back</Button>
@@ -167,7 +162,7 @@ export default function WhatsAppDateDialog({
                 mode="single"
                 selected={checkIn}
                 onSelect={(d) => setCheckIn(d ?? undefined)}
-                numberOfMonths={monthsToShow}
+                numberOfMonths={1}
                 disabled={[{ before: today }]}
                 weekStartsOn={1}
                 captionLayout="buttons"
@@ -181,7 +176,7 @@ export default function WhatsAppDateDialog({
                   <span className="text-sm">Selected:</span>
                   <div className="px-3 py-1 rounded bg-muted text-sm">{checkIn ? fmt(checkIn) : '—'}</div>
                 </div>
-                <div className="flex gap-2">
+                <div className="hidden md:flex gap-2">
                   <Button variant="outline" onClick={() => { setCheckIn(undefined); }} aria-label="Clear check-in date">
                     Clear
                   </Button>
@@ -234,7 +229,7 @@ export default function WhatsAppDateDialog({
                     setTimeout(() => setStep('guests'), 150);
                   }
                 }}
-                numberOfMonths={monthsToShow}
+                numberOfMonths={1}
                 month={displayedMonth}
                 disabled={checkIn ? [{ before: addDays(checkIn, 1) }] : [{ before: today }]}
                 weekStartsOn={1}
@@ -251,7 +246,7 @@ export default function WhatsAppDateDialog({
                   <div className="px-3 py-1 rounded bg-muted text-sm">{checkIn ? fmt(checkIn) : '—'}</div>
                   <div className="px-3 py-1 rounded bg-muted text-sm">{checkOut ? fmt(checkOut) : '—'}</div>
                 </div>
-                <div className="flex gap-2">
+                <div className="hidden md:flex gap-2">
                   <Button variant="outline" onClick={() => { setCheckOut(undefined); }} aria-label="Clear check-out">
                     Clear
                   </Button>
@@ -293,7 +288,7 @@ export default function WhatsAppDateDialog({
                   </div>
                 </div>
 
-                <div className="flex justify-end gap-2">
+                <div className="hidden md:flex justify-end gap-2">
                   <Button variant="ghost" onClick={() => setStep('checkout')} aria-label="Back to checkout">Back</Button>
                   <Button ref={sendRef} onClick={handleSend} disabled={!validCheckOut} aria-label="Confirm on WhatsApp" className="bg-primary text-white">
                     Confirm on WhatsApp
