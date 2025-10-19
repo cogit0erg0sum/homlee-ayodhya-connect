@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import { PHONE_NUMBER } from "@/lib/constants";
+import MobileDateRangePicker from "@/components/MobileDateRangePicker";
 
 const fmt = (d?: Date) => (d ? format(d, "dd MMM yyyy") : "");
 
@@ -140,6 +141,19 @@ export default function WhatsAppDateDialog({
         </div>
 
         <div className="grid gap-3">
+          {/* Mobile optimized picker */}
+          <div className="md:hidden">
+            <MobileDateRangePicker
+              checkIn={checkIn}
+              checkOut={checkOut}
+              onChange={(r) => {
+                if (r.from) setCheckIn(r.from);
+                else setCheckIn(undefined);
+                if (r.to) setCheckOut(r.to);
+                else setCheckOut(undefined);
+              }}
+            />
+          </div>
           <noscript>
             <div className="p-4 bg-yellow-50 rounded border">JavaScript is required to use the interactive date picker. Please call us at <a href={`tel:+${PHONE_NUMBER}`} className="underline">+{PHONE_NUMBER}</a> to book.</div>
           </noscript>
