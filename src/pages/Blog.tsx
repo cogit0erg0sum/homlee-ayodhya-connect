@@ -21,19 +21,19 @@ const Blog = () => {
         <meta property="og:description" content="Discover affordable, clean stays near Ram Mandir, Ayodhya — including Homlee Ayodhya. Read our 2025 guide and plan your visit today." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://www.homleeayodhya.info/blog" />
-  <meta property="og:image" content="/homlee-favicon.svg" />
+  <meta property="og:image" content="/og-image.png" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Top 5 Budget Hotels Near Ram Janmabhoomi | Homlee Ayodhya Blog 2025" />
         <meta name="twitter:description" content="Discover affordable, clean stays near Ram Mandir, Ayodhya — including Homlee Ayodhya. Read our 2025 guide and plan your visit today." />
-  <meta name="twitter:image" content="/homlee-favicon.svg" />
+  <meta name="twitter:image" content="/og-image.png" />
 
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             "headline": "Top 5 Budget & Cheap Hotels Near Ram Janmabhoomi, Ayodhya (2025 Guide)",
-            "image": "/homlee-favicon.svg",
+            "image": "/og-image.png",
             "datePublished": "2025-01-15T08:00:00+05:30",
             "dateModified": "2025-01-15T08:00:00+05:30",
             "author": {
@@ -45,7 +45,7 @@ const Blog = () => {
               "name": "Homlee Ayodhya",
               "logo": {
                 "@type": "ImageObject",
-                "url": "/homlee-favicon.svg"
+                "url": "/og-image.png"
               }
             },
             "mainEntityOfPage": {

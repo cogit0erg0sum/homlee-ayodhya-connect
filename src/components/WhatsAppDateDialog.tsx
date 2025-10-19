@@ -57,13 +57,8 @@ export default function WhatsAppDateDialog({
     return d;
   }, []);
 
-  // responsive months to show (1 on mobile, 2 on larger screens)
-  React.useEffect(() => {
-    const update = () => setMonthsToShow(window.innerWidth < 640 ? 1 : 2);
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, []);
+  // always show a single month for simpler mobile-first UX
+  React.useEffect(() => setMonthsToShow(1), []);
 
   // when dialog opens or checkIn changes, align displayed month to checkIn or today
   React.useEffect(() => {

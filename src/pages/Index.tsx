@@ -26,12 +26,12 @@ const Index = () => {
         <meta property="og:description" content="Clean, comfortable rooms in Ayodhya with AC, Wi-Fi, and easy access to Ram Janmabhoomi & Hanuman Garhi. Chat on WhatsApp to book instantly." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.homleeayodhya.info/" />
-  <meta property="og:image" content="/homlee-favicon.svg" />
+  <meta property="og:image" content="/og-image.png" />
         
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Homlee Ayodhya - Peaceful Stays near Ram Janmabhoomi" />
         <meta name="twitter:description" content="4 clean, cozy rooms with modern amenities in the heart of Ayodhya" />
-  <meta name="twitter:image" content="/homlee-favicon.svg" />
+  <meta name="twitter:image" content="/og-image.png" />
       </Helmet>
 
       <div className="min-h-screen">
