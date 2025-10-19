@@ -1,6 +1,6 @@
 import { MapPin } from "lucide-react";
 import { useEffect, useState } from "react";
-import { HOMLEE_COORDS } from "@/lib/constants";
+import { HOMLEE_COORDS, HOMLEE_MAP_LINK } from "@/lib/constants";
 
 const distances = [
   { place: "Ram Janmabhoomi", distance: "2 km" },
@@ -56,10 +56,17 @@ const Location = () => {
     if (userCoords) {
       const origin = `${userCoords.lat},${userCoords.lng}`;
       window.open(`https://www.google.com/maps/dir/?api=1&origin=${origin}&destination=${dest}&travelmode=driving`, "_blank");
-    } else {
-      // Open the location on Google Maps
-      window.open(`https://www.google.com/maps/search/?api=1&query=${dest}`, "_blank");
+      return;
     }
+
+    // If we have a short maps link from the user, open that. It points to the place and may include a nicer place page.
+    if (HOMLEE_MAP_LINK) {
+      window.open(HOMLEE_MAP_LINK, "_blank");
+      return;
+    }
+
+    // Fallback: open the lat,lng search
+    window.open(`https://www.google.com/maps/search/?api=1&query=${dest}`, "_blank");
   };
 
   return (
