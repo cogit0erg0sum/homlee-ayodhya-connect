@@ -1,45 +1,39 @@
 import { MessageCircle } from "lucide-react";
 import { Button } from "./ui/button";
 import heroImage from "@/assets/room-1.jpg";
+import WhatsAppDateDialog from "@/components/WhatsAppDateDialog";
 
 const Hero = () => {
-  const whatsappLink = `https://wa.me/918004174182?text=${encodeURIComponent(
-    "Hi Homlee Ayodhya! I'm interested in booking. Please contact me."
-  )}`;
-
   const scrollToRooms = () => {
     const element = document.querySelector("#rooms");
     element?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <section id="hero" className="relative min-h-[85vh] flex items-center justify-center px-4 py-12 md:py-20">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-secondary via-background to-muted"></div>
-      
-      <div className="container mx-auto text-center space-y-8 max-w-4xl">
-        <div className="space-y-4">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold leading-tight">
-            Comfortable Stays in the Heart of Ayodhya
-          </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-            4 clean, cozy rooms near Ram Janmabhoomi & Hanuman Garhi
-          </p>
-          <p className="text-base md:text-lg font-medium text-primary">
-            Peaceful stays near Ram Janmabhoomi
-          </p>
-        </div>
+    <section
+      id="hero"
+      className="relative min-h-[85vh] flex items-center justify-center px-4 py-12 md:py-20"
+    >
+      <div className="container mx-auto max-w-5xl text-center">
+        <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+          Stays in Ayodhya — Cozy Rooms near Ram Janmabhoomi
+        </h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Button
-            asChild
-            size="lg"
-            className="bg-hero-gradient text-lg px-8 py-6 h-auto shadow-medium hover:shadow-large transition-all"
-          >
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-              <MessageCircle className="mr-2 h-5 w-5" />
-              Chat on WhatsApp
-            </a>
-          </Button>
+        <p className="mt-4 text-lg text-muted-foreground">
+          Clean, comfortable rooms with AC, Wi-Fi, and easy access to the
+          temple and ghats. Chat to book instantly.
+        </p>
+
+        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+          <WhatsAppDateDialog
+            trigger={
+              <Button size="lg" className="text-lg px-8 py-6 h-auto bg-hero-gradient">
+                <MessageCircle className="mr-2 h-5 w-5" />
+                Chat on WhatsApp
+              </Button>
+            }
+          />
+
           <Button
             size="lg"
             variant="outline"
@@ -50,10 +44,9 @@ const Hero = () => {
           </Button>
         </div>
 
-        {/* Hero Image */}
         <div className="mt-12 rounded-2xl overflow-hidden shadow-large max-w-3xl mx-auto">
-          <img 
-            src={heroImage} 
+          <img
+            src={heroImage}
             alt="Homlee Ayodhya - Comfortable room interior with modern amenities in Ayodhya"
             className="w-full h-full object-cover aspect-video"
             loading="eager"

@@ -5,9 +5,10 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ramJanmabhoomiImage from "@/assets/ram-janmabhoomi-blog.jpg";
+import { PHONE_NUMBER } from "@/lib/constants";
 
 const Blog = () => {
-  const whatsappLink = "https://wa.me/918004174182?text=Hi!%20I%20want%20to%20book%20Homlee%20Ayodhya";
+  const whatsappLink = `https://wa.me/${PHONE_NUMBER}?text=Hi!%20I%20want%20to%20book%20Homlee%20Ayodhya`;
 
   return (
     <>

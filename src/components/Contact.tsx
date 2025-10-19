@@ -4,6 +4,8 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import WhatsAppDateDialog from "@/components/WhatsAppDateDialog"; // (put at top with other imports)
+import { PHONE_NUMBER } from "@/lib/constants";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -23,7 +25,7 @@ const Contact = () => {
     setFormData({ name: "", phone: "", dates: "", message: "" });
   };
 
-  const whatsappLink = `https://wa.me/918004174182?text=${encodeURIComponent(
+  const whatsappLink = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(
     "Hi Homlee Ayodhya! I'm interested in booking. Please contact me."
   )}`;
 
@@ -40,16 +42,18 @@ const Contact = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Info */}
           <div className="space-y-6">
-            <Button
-              asChild
-              size="lg"
-              className="w-full bg-hero-gradient text-lg py-6 h-auto"
-            >
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="mr-2 h-5 w-5" />
+           
+        <WhatsAppDateDialog
+          trigger={
+            <button className="inline-flex items-center justify-center rounded-md bg-hero-gradient text-white text-base px-6 py-4">
+              <span className="inline-flex items-center gap-2">
+                <MessageCircle className="h-5 w-5" />
                 Chat on WhatsApp
-              </a>
-            </Button>
+              </span>
+            </button>
+          }
+        />
+
 
             <div className="space-y-4">
               <a

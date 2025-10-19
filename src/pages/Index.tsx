@@ -12,6 +12,7 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import StickyWhatsAppButton from "@/components/StickyWhatsAppButton";
 import BlogCTA from "@/components/BlogCTA";
+import { PHONE_NUMBER } from "@/lib/constants";
 
 const Index = () => {
   return (
@@ -49,7 +50,7 @@ const Index = () => {
         </main>
         <Footer />
         <StickyWhatsAppButton
-          phoneNumber="918004174182"
+          phoneNumber={PHONE_NUMBER}
           message="Hi Homlee Ayodhya! I'm interested in booking. Please contact me."
         />
       </div>

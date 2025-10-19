@@ -1,6 +1,6 @@
 import { MessageCircle, Users } from "lucide-react";
-import { Button } from "./ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "./ui/card";
+import WhatsAppDateDialog from "@/components/WhatsAppDateDialog";
 
 interface RoomCardProps {
   name: string;
@@ -11,35 +11,29 @@ interface RoomCardProps {
 }
 
 const RoomCard = ({ name, features, maxOccupancy, priceFrom, image }: RoomCardProps) => {
-  const whatsappLink = `https://wa.me/918004174182?text=${encodeURIComponent(
-    `Hi! I'd like to book the ${name} on [dates].`
-  )}`;
-
   return (
-    <Card className="overflow-hidden hover:shadow-large transition-shadow">
-      {/* Room Image */}
-      <div className="aspect-video overflow-hidden">
-        <img 
-          src={image} 
-          alt={`${name} - Homlee Ayodhya`}
-          className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-          loading="lazy"
-        />
-      </div>
+    <Card className="overflow-hidden">
+      <img
+        src={image}
+        alt={name}
+        className="w-full h-56 object-cover"
+        loading="lazy"
+      />
 
       <CardHeader>
-        <CardTitle className="text-2xl">{name}</CardTitle>
-        <div className="flex items-center gap-2 text-muted-foreground">
-          <Users className="h-4 w-4" />
-          <span className="text-sm">Max {maxOccupancy} guests</span>
-        </div>
+        <CardTitle className="flex items-center justify-between">
+          <span>{name}</span>
+          <span className="text-sm text-muted-foreground flex items-center gap-1">
+            <Users className="h-4 w-4" /> {maxOccupancy}
+          </span>
+        </CardTitle>
       </CardHeader>
 
-      <CardContent className="space-y-4">
-        <ul className="space-y-2">
-          {features.map((feature, index) => (
-            <li key={index} className="flex items-center gap-2 text-sm">
-              <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
+      <CardContent className="grid gap-4">
+        <ul className="grid gap-2 text-sm">
+          {features.map((feature, idx) => (
+            <li key={idx} className="flex items-start gap-2">
+              <span className="mt-1 h-1.5 w-1.5 rounded-full bg-primary inline-block" />
               {feature}
             </li>
           ))}
@@ -52,12 +46,15 @@ const RoomCard = ({ name, features, maxOccupancy, priceFrom, image }: RoomCardPr
       </CardContent>
 
       <CardFooter>
-        <Button asChild className="w-full bg-hero-gradient">
-          <a href={whatsappLink} target="_blank" rel="noopener noreferrer">
-            <MessageCircle className="mr-2 h-4 w-4" />
-            Enquire on WhatsApp
-          </a>
-        </Button>
+        <WhatsAppDateDialog
+          trigger={
+            <button className="w-full bg-hero-gradient text-white rounded-md h-10 px-4 inline-flex items-center justify-center gap-2">
+              <MessageCircle className="h-4 w-4" />
+              Enquire on WhatsApp
+            </button>
+          }
+          note={`Room: ${name}`}
+        />
       </CardFooter>
     </Card>
   );

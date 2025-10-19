@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Calendar base styles */
+@import "react-day-picker/dist/style.css";
+
+/* Optional: small style tweaks for better contrast */
+.rdp {
+  --rdp-accent-color: #111827;            /* dark gray */
+  --rdp-accent-background-color: #e5e7eb; /* light gray */
+  --rdp-outline: 2px solid #111827;
+}
+
+
 /* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
 All colors MUST be HSL.
 */

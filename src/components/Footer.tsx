@@ -1,5 +1,6 @@
 import { MessageCircle } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
+import { PHONE_NUMBER } from "@/lib/constants";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -14,7 +15,7 @@ const Footer = () => {
     }
   };
 
-  const whatsappLink = "https://wa.me/918004174182?text=Hi!%20I%20want%20to%20book%20Homlee%20Ayodhya";
+  const whatsappLink = `https://wa.me/${PHONE_NUMBER}?text=Hi!%20I%20want%20to%20book%20Homlee%20Ayodhya`;
 
   return (
     <footer className="bg-foreground text-background py-12 px-4">
@@ -72,7 +73,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm opacity-80">
-              <a href="tel:+918004174182" className="block hover:opacity-100 transition-opacity">
+              <a href={`tel:+${PHONE_NUMBER}`} className="block hover:opacity-100 transition-opacity">
                 +91 8004174182
               </a>
               <a href="mailto:info@homleeayodhya.com" className="block hover:opacity-100 transition-opacity">

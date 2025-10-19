@@ -46,6 +46,8 @@ const itineraryData = {
   },
 };
 
+import { PHONE_NUMBER } from "@/lib/constants";
+
 const ItineraryPlanner = () => {
   const [duration, setDuration] = useState<string>("1");
   const [selectedInterests, setSelectedInterests] = useState<string[]>(["temples"]);
@@ -80,7 +82,7 @@ const ItineraryPlanner = () => {
 
   const shareOnWhatsApp = () => {
     const itinerary = generateItinerary();
-    const whatsappLink = `https://wa.me/918004174182?text=${encodeURIComponent(itinerary)}`;
+  const whatsappLink = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(itinerary)}`;
     window.open(whatsappLink, "_blank", "noopener,noreferrer");
   };
 
