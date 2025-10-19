@@ -91,6 +91,7 @@ export default function MobileDateRangePicker({ checkIn, checkOut, onChange }: P
           onSelect={handleSelect}
           selected={{ from: checkIn, to: checkOut }}
           disabled={{ before: today }}
+          numberOfMonths={1}
           fromMonth={checkIn || today}
           captionLayout="buttons"
           className="react-day-picker--mobile"
