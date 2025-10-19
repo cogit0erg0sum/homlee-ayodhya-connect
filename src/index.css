@@ -1,10 +1,11 @@
+@import "react-day-picker/dist/style.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
 /* Calendar base styles */
-@import "react-day-picker/dist/style.css";
+
 
 /* Optional: small style tweaks for better contrast */
 .rdp {
