@@ -65,8 +65,7 @@ const Gallery = () => {
           </div>
         )}
 
-        <p className="text-center text-sm text-muted-foreground mt-8">
-          💡 <strong>Need more photos?</strong> You can easily add property exterior, reception, and nearby temple photos
+        <p className="text-center text-sm text-muted-foreground mt-8"> 
         </p>
       </div>
     </section>
