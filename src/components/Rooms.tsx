@@ -42,7 +42,7 @@ const Rooms = () => {
         <div className="text-center mb-12 space-y-4">
           <h2 className="text-3xl md:text-5xl font-bold">Our Rooms</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Choose from our 4 comfortable rooms, each designed for your peaceful stay in Ayodhya
+            Choose from our serene and comfortable rooms — perfect for a peaceful stay near Ram Mandir in Ayodhya.
           </p>
         </div>
 
