@@ -4,7 +4,7 @@ const highlights = [
   {
     icon: MapPin,
     title: "Prime location near key temples",
-    description: "Walking distance to Ram Janmabhoomi",
+    description: "Walking distance to Ram Mandir",
   },
   {
     icon: Wifi,
