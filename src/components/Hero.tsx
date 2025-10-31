@@ -16,12 +16,11 @@ const Hero = () => {
     >
       <div className="container mx-auto max-w-5xl text-center">
         <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-          Stays in Ayodhya — Budget Rooms near Ram Janmabhoomi with Parking facility.
+           Stays in Ayodhya — Budget Rooms near Ram Mandir with Parking, AC & Wi-Fi.
         </h1>
 
         <p className="mt-4 text-lg text-muted-foreground">
-          Clean, comfortable rooms with AC, Wi-Fi, and easy access to the
-          temple and ghats.Parking facility available. Chat to book instantly.
+          AC Rooms • Wi-Fi • Parking • Near Temple & Ghats • Chat to Book Instantly
         </p>
 
         <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
