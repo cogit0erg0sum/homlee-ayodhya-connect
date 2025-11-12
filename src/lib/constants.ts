@@ -1,4 +1,4 @@
-export const PHONE_NUMBER = "918004174182";
+export const PHONE_NUMBER = "918005174502";
 
 // Coordinates for Homlee Ayodhya (replace with exact location if available)
 export const HOMLEE_COORDS = {
