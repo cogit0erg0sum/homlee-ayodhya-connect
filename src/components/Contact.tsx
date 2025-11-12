@@ -57,13 +57,13 @@ const Contact = () => {
 
             <div className="space-y-4">
               <a
-                href="tel:+918004174182"
+                href="tel:+918005174502"
                 className="flex items-center gap-3 p-4 rounded-lg bg-card shadow-soft hover:shadow-medium transition-shadow"
               >
                 <Phone className="h-5 w-5 text-primary" />
                 <div>
                   <p className="text-sm text-muted-foreground">Call us</p>
-                  <p className="font-medium">+91 8004174182</p>
+                  <p className="font-medium">+91 8005174502</p>
                 </div>
               </a>
 
