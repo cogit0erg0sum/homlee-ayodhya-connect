@@ -74,9 +74,9 @@ const Footer = () => {
             <h4 className="font-semibold mb-4">Contact</h4>
             <div className="space-y-2 text-sm opacity-80">
               <a href={`tel:+${PHONE_NUMBER}`} className="block hover:opacity-100 transition-opacity">
-                +91 8005174502
+                +91 8005175402
               </a>
-              <a href="mailto:info@homleeayodhya.com" className="block hover:opacity-100 transition-opacity">
+              <a href="mailto:homleeayodhya1@gmail.com" className="block hover:opacity-100 transition-opacity">
                 homleeayodhya1@gmail.com
               </a>
               <a 
